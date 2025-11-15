@@ -1,0 +1,86 @@
+{
+    "hero_title": "Entrfy Email Intelligence",
+    "hero_sub": "AI-powered email classification, automation, and smart inbox for modern teams.",
+    "get_started": "Get Started",
+    "features_title": "Powerful Features to Supercharge Your Inbox",
+    "features": [
+      {
+        "title": "AI Email Classification",
+        "desc": "Automatically categorize incoming emails using our multi-tier AI engine."
+      },
+      {
+        "title": "Smart Rules Engine",
+        "desc": "Create advanced automation rules for instant labeling and routing."
+      },
+      {
+        "title": "n8n Workflow Integration",
+        "desc": "Trigger custom workflows or actions via your own n8n instance."
+      },
+      {
+        "title": "Smart Reply Suggestions",
+        "desc": "AI-generated quick replies based on email intent and tone."
+      },
+      {
+        "title": "Multi-Account Support",
+        "desc": "Manage unlimited Gmail accounts with centralized intelligence."
+      },
+      {
+        "title": "Privacy First",
+        "desc": "All processing respects your data privacy — secure, encrypted, isolated."
+      }
+    ],
+    "pricing_title": "Choose the Right Plan",
+    "pricing_button": "Get Started",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$9/mo",
+        "features": [
+          "1 Email Account",
+          "Tier-0 + Tier-1 AI",
+          "2000 Classified Emails",
+          "Basic Rules Engine",
+          "Basic Automation"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "$19/mo",
+        "features": [
+          "5 Email Accounts",
+          "Tier-2 AI",
+          "Unlimited Classified Emails",
+          "Advanced Rules",
+          "Smart Reply Suggestions",
+          "n8n Integration"
+        ]
+      },
+      {
+        "name": "Team",
+        "price": "$49/mo",
+        "features": [
+          "Unlimited Accounts",
+          "Priority AI Compute",
+          "Team Dashboard",
+          "Audit Logs",
+          "Advanced Security"
+        ]
+      }
+    ],
+    "cta_title": "Ready to Upgrade Your Inbox?",
+    "cta_desc": "Start your journey with Entrfy and experience AI-powered email automation.",
+    "cta_button": "Start Free Trial",
+    "footer_brand": "Entrfy",
+    "footer_docs": "Docs",
+    "footer_pricing": "Pricing",
+    "footer_privacy": "Privacy",
+    "footer_terms": "Terms",
+    "footer_copyright": "Entrfy",
+    "nav_hero": "Hero",
+    "nav_features": "Features",
+    "nav_pricing": "Pricing",
+    "nav_cta": "Start",
+    "nav_login": "Login",
+    "nav_signup": "Sign Up"
+}
+

@@ -1,10 +1,6 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Next.js built-in theme system (dokunmuyoruz) */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,15 +8,85 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* BODY, ROOT, DARK OVERRIDE → preflight'tan sonra yüklenmeli */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f4f4f7;
+    --foreground: #111111;
+  }
+
+  html.dark {
+    --background: #0b0c0f;
+    --foreground: #f5f5f5;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .bg-app {
+    background-color: var(--background);
+  }
+  .text-app {
+    color: var(--foreground);
+  }
+}
+
+/* Hero animasyonu */
+@keyframes heroFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.animate-heroFade {
+  animation: heroFade 1.2s ease-out forwards;
+}
+
+
+html.dark .aurora-1 {
+  background: radial-gradient(circle, rgba(56,189,248,0.5), transparent 70%);
+}
+html.dark .aurora-2 {
+  background: radial-gradient(circle, rgba(168,85,247,0.5), transparent 70%);
+}
+html.dark .aurora-3 {
+  background: radial-gradient(circle, rgba(16,185,129,0.45), transparent 70%);
+}
+
+html .aurora-1 {
+  background: radial-gradient(circle, rgba(99,102,241,0.4), transparent 70%);
+}
+html .aurora-2 {
+  background: radial-gradient(circle, rgba(56,189,248,0.4), transparent 70%);
+}
+html .aurora-3 {
+  background: radial-gradient(circle, rgba(16,185,129,0.33), transparent 70%);
+}
+
+@keyframes mailFlowDown {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
 }

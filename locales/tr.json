@@ -1,0 +1,86 @@
+{
+    "hero_title": "Entrfy E-Posta Zekası",
+    "hero_sub": "Yapay zeka destekli e-posta sınıflandırma, otomasyon ve akıllı gelen kutusu.",
+    "get_started": "Başla",
+    "features_title": "Gelen Kutunuzu Güçlendiren Akıllı Özellikler",
+    "features": [
+      {
+        "title": "Yapay Zekâ ile E-posta Sınıflandırma",
+        "desc": "Gelen e-postaları çok katmanlı AI motorumuzla otomatik olarak kategorize edin."
+      },
+      {
+        "title": "Akıllı Kural Motoru",
+        "desc": "Etiketleme ve yönlendirme için gelişmiş otomasyon kuralları oluşturun."
+      },
+      {
+        "title": "n8n Workflow Entegrasyonu",
+        "desc": "Kendi n8n instance'ınız üzerinden özel iş akışları tetikleyin."
+      },
+      {
+        "title": "Akıllı Yanıt Önerileri",
+        "desc": "E-postanın niyet ve tonuna göre AI tarafından oluşturulmuş hızlı yanıtlar."
+      },
+      {
+        "title": "Çoklu Hesap Desteği",
+        "desc": "Sınırsız Gmail hesabını tek merkezden yönetin."
+      },
+      {
+        "title": "Gizlilik Öncelikli",
+        "desc": "Tüm işlemler veri gizliliğinize saygılıdır: güvenli, şifreli ve izole."
+      }
+    ],
+    "pricing_title": "Size En Uygun Planı Seçin",
+    "pricing_button": "Başla",
+    "plans": [
+      {
+        "name": "Başlangıç",
+        "price": "9$/ay",
+        "features": [
+          "1 E-posta Hesabı",
+          "Tier-0 + Tier-1 Yapay Zekâ",
+          "2000 Etiketlenmiş E-posta",
+          "Temel Kural Motoru",
+          "Temel Otomasyon"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "19$/ay",
+        "features": [
+          "5 E-posta Hesabı",
+          "Tier-2 Yapay Zekâ",
+          "Sınırsız Etiketleme",
+          "Gelişmiş Kurallar",
+          "Akıllı Yanıt Önerileri",
+          "n8n Entegrasyonu"
+        ]
+      },
+      {
+        "name": "Takım",
+        "price": "49$/ay",
+        "features": [
+          "Sınırsız Hesap",
+          "Öncelikli AI İşleme",
+          "Takım Paneli",
+          "Denetim Kayıtları",
+          "Gelişmiş Güvenlik"
+        ]
+      }
+    ],
+    "cta_title": "Gelen Kutunu Yükseltmeye Hazır mısın?",
+    "cta_desc": "Entrfy ile yolculuğa başla ve yapay zekâ destekli e-posta otomasyonunu deneyimle.",
+    "cta_button": "Ücretsiz Dene",
+    "footer_brand": "Entrfy",
+    "footer_docs": "Dokümanlar",
+    "footer_pricing": "Fiyatlandırma",
+    "footer_privacy": "Gizlilik",
+    "footer_terms": "Şartlar",
+    "footer_copyright": "Entrfy",
+    "nav_hero": "Giriş",
+    "nav_features": "Özellikler",
+    "nav_pricing": "Fiyatlar",
+    "nav_cta": "Başla",
+    "nav_login": "Giriş Yap",
+    "nav_signup": "Kayıt Ol"
+    
+  }
