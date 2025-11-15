@@ -90,3 +90,9 @@ html .aurora-3 {
     opacity: 0;
   }
 }
+
+
+
+button, a{
+  cursor: pointer;
+}

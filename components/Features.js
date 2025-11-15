@@ -8,73 +8,114 @@ export default function Features() {
 
   return (
     <section
-      className="w-full py-20 md:py-28 px-4 md:px-6 relative"
+      id="features"
+      className="
+        scroll-mt-[20vh]
+        w-full 
+        px-4 md:px-6 
+        relative
+        pt-28 md:pt-36
+        pb-32 md:pb-44
+        min-h-[100vh]
+        flex flex-col
+      "
       style={{
         background: "var(--background)",
-        color: "var(--foreground)"
+        color: "var(--foreground)",
       }}
     >
+      {/* TITLE */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.45 }}
         transition={{ duration: 0.5 }}
-        className="text-center text-3xl md:text-5xl font-semibold mb-12"
-        style={{
-          color: "var(--foreground)"
-        }}
+        className="
+          text-center 
+          text-3xl md:text-5xl lg:text-6xl 
+          font-semibold 
+          mb-16 md:mb-20
+        "
       >
         {t.features_title}
       </motion.h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+      {/* GRID */}
+      <div
+        className="
+          grid
+          grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+          gap-6 md:gap-8 lg:gap-10
+          max-w-7xl mx-auto
+          auto-rows-[1fr]
+          w-full flex-1
+        "
+      >
         {t.features?.map((f, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 20, scale: 0.92 }}
+            initial={{ opacity: 0, y: 25, scale: 0.94 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: false, amount: 0.25 }}
+            viewport={{ once: false, amount: 0.35 }}
             transition={{
               duration: 0.55,
-              delay: i * 0.1,
-              ease: "easeOut"
+              delay: i * 0.12,
+              ease: "easeOut",
             }}
             whileHover={{
-              scale: 1.05,
-              rotateX: 2,
-              rotateY: -2,
-              // 👇 Hover'ı Pricing'deki gibi hızlı ve keskin yap
-              transition: {
-                type: "tween",
-                duration: 0.30,
-                ease: [0.16, 1, 0.3, 1]
-              }
+              scale: 1.04,
+              transition: { duration: 0.28 }
             }}
-            className="p-6 rounded-2xl border backdrop-blur-md cursor-pointer"
+            className="
+              flex flex-col
+              rounded-2xl 
+              p-6 md:p-8 lg:p-10 
+              border
+              backdrop-blur-md 
+              cursor-pointer
+              min-h-[260px] md:min-h-[330px] lg:min-h-[360px]   /* 🔥 desktop için ideal */
+            "
             style={{
-              background: "color-mix(in srgb, var(--foreground) 2%, transparent)",
-              borderColor: "color-mix(in srgb, var(--foreground) 12%, transparent)",
-              boxShadow: "0 0 25px -10px rgba(0,0,0,0.25)"
+              background:
+                "color-mix(in srgb, var(--foreground) 3%, transparent)",
+              borderColor:
+                "color-mix(in srgb, var(--foreground) 14%, transparent)",
+              boxShadow: "0 0 25px -12px rgba(0,0,0,0.25)",
             }}
           >
+            {/* ICON */}
             <div
-              className="text-4xl mb-4"
+              className="
+                text-4xl md:text-5xl lg:text-6xl
+                mb-4 md:mb-6
+              "
               style={{ color: "var(--foreground)" }}
             >
               {["📬","⚙️","🔗","💬","📂","🔒"][i]}
             </div>
 
+            {/* TITLE */}
             <h3
-              className="text-xl font-semibold mb-2"
+              className="
+                text-xl md:text-2xl lg:text-[26px] 
+                font-semibold 
+                mb-2 md:mb-3
+              "
               style={{ color: "var(--foreground)" }}
             >
               {f.title}
             </h3>
 
+            {/* DESCRIPTION */}
             <p
-              className="text-sm leading-relaxed"
+              className="
+                text-sm md:text-base lg:text-lg
+                leading-relaxed
+                mt-auto
+              "
               style={{
-                color: "color-mix(in srgb, var(--foreground) 70%, transparent)"
+                color:
+                  "color-mix(in srgb, var(--foreground) 70%, transparent)"
               }}
             >
               {f.desc}

@@ -13,19 +13,19 @@ export default function Home() {
 
   return (
     
-    <main className="relative w-full min-h-screen overflow-hidden">
+    <main  className="relative w-full min-h-screen overflow-hidden">
 
-<div className="absolute inset-0 z-0">
-  {/* <AuroraBackground /> */}
-  <MailFlowBackground />
-</div>
+      <div className="absolute inset-0 z-0">
+        {/* <AuroraBackground /> */}
+        <MailFlowBackground />
+      </div>
       <div className="absolute inset-0 z-0">
         {/* <HeroCanvas /> */}
       </div>
 
       <div className="relative z-10">
 
-        <section className="h-screen flex flex-col items-center justify-center text-center px-4 md:px-6 animate-heroFade">
+        <section id="hero" className="h-screen flex flex-col items-center justify-center text-center px-4 md:px-6 animate-heroFade scroll-mt-[20vh]">
 
           <h1
             className="text-3xl md:text-6xl font-extrabold leading-tight md:leading-[1.1] bg-clip-text text-transparent"

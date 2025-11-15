@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "@/context/LocaleContext";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const sections = [
@@ -12,16 +13,68 @@ const sections = [
 
 export default function SideNav() {
   const { t } = useLocale();
+  const [active, setActive] = useState("hero");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px", 
+      }
+    );
+
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const scrollTo = (id) => {
-    const element = document.getElementById(id);
-    if (!element) return;
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
+    const el = document.getElementById(id);
+    if (!el) return;
+  
+    const rect = el.getBoundingClientRect();
+    const sectionHeight = rect.height;
+    const windowHeight = window.innerHeight;
+  
+    const offset =
+      sectionHeight < windowHeight * 0.9
+        ? (windowHeight - sectionHeight) / 2     
+        : windowHeight * 0.15;                   
+  
+    const targetY = el.offsetTop - offset;
+  
+    window.scrollTo({
+      top: targetY,
+      behavior: "smooth",
+    });
+  };
+  /* ------------------------------------------- */
+  const activeStyle = {
+    background: "var(--foreground)",
+    color: "var(--background)",
+    boxShadow: "0 0 25px -4px var(--foreground)",
+    transform: "scale(1.12)",
+    fontWeight: 600,
+  };
+
+  const baseStyle = {
+    background: "color-mix(in srgb, var(--foreground) 10%, transparent)",
+    color: "var(--foreground)",
+    opacity: 0.75,
   };
 
   return (
     <>
-      {/* DESKTOP LEFT NAV */}
+      {/* DESKTOP */}
       <div className="hidden md:flex fixed left-6 top-1/2 -translate-y-1/2 z-50 flex-col gap-4">
 
         {sections.map((s, i) => (
@@ -31,34 +84,32 @@ export default function SideNav() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.08 }}
-            className="px-4 py-2 rounded-full bg-black/20 backdrop-blur-md text-white text-sm hover:bg-black/40 transition"
-            style={{
-              background: "color-mix(in srgb, var(--foreground) 10%, transparent)",
-              color: "var(--foreground)",
-            }}
+            className="px-4 py-2 rounded-full text-sm backdrop-blur-xl transition-all"
+            style={active === s.id ? activeStyle : baseStyle}
+            whileHover={{ scale: 1.07 }}
           >
             {t[s.key]}
           </motion.button>
         ))}
 
-        {/* Login & Signup */}
         <div className="mt-6 flex flex-col gap-3">
           <button
-            className="px-4 py-2 rounded-full border text-sm"
+            className="px-4 py-2 rounded-full text-sm border hover:opacity-80 transition-all"
             style={{
               background: "var(--background)",
               color: "var(--foreground)",
-              border: "1px solid color-mix(in srgb, var(--foreground) 30%, transparent)"
+              border:
+                "1px solid color-mix(in srgb, var(--foreground) 30%, transparent)",
             }}
           >
             {t.nav_login}
           </button>
 
           <button
-            className="px-4 py-2 rounded-full text-sm font-semibold"
+            className="px-4 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-all"
             style={{
               background: "var(--foreground)",
-              color: "var(--background)"
+              color: "var(--background)",
             }}
           >
             {t.nav_signup}
@@ -66,22 +117,33 @@ export default function SideNav() {
         </div>
       </div>
 
-
-      {/* MOBILE BOTTOM NAV */}
-      <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-black/30 backdrop-blur-xl px-4 py-3 flex justify-between gap-3 rounded-full"
+      {/* MOBILE */}
+      <div
+        className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 px-4 py-3 flex justify-between gap-3 rounded-full backdrop-blur-xl"
         style={{
-          background: "color-mix(in srgb, var(--foreground) 10%, transparent)",
+          background:
+            "color-mix(in srgb, var(--foreground) 10%, transparent)",
         }}
       >
         {sections.map((s) => (
-          <button
+          <motion.button
             key={s.id}
             onClick={() => scrollTo(s.id)}
-            className="text-xs px-3 py-1 rounded-full"
-            style={{ color: "var(--foreground)" }}
+            className="text-xs px-3 py-1 rounded-full transition-all"
+            style={
+              active === s.id
+                ? {
+                    background: "var(--foreground)",
+                    color: "var(--background)",
+                    fontWeight: 600,
+                    transform: "scale(1.1)",
+                  }
+                : { color: "var(--foreground)", opacity: 0.75 }
+            }
+            whileHover={{ scale: 1.08 }}
           >
             {t[s.key]}
-          </button>
+          </motion.button>
         ))}
       </div>
     </>
