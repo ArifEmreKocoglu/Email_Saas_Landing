@@ -11,9 +11,7 @@ export default function Header() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("entrfy_token")) {
-      setLoggedIn(true);
-    }
+    if (localStorage.getItem("entrfy_token")) setLoggedIn(true);
   }, []);
 
   return (
@@ -23,31 +21,26 @@ export default function Header() {
         flex items-center justify-between
         px-6 py-4
       "
-      style={{
-        background: "transparent",
-      }}
+      style={{ background: "transparent" }}
     >
-      <Link
-        href="/"
-        className="text-lg font-semibold"
-        style={{ color: "var(--foreground)" }}
-      >
+      <Link data-close-flow="true" href="/" className="text-lg font-semibold" style={{ color: "var(--foreground)" }}>
         Entrfy
       </Link>
 
       <div className="flex items-center gap-3">
-
         <LanguageToggle />
         <ThemeToggle />
 
+
+
         <Link
+        data-close-flow="true"
           href={loggedIn ? "/app" : "/app/login"}
-          className="px-5 py-2 rounded-full font-semibold transition-all text-sm md:text-base"
+          className="px-5 py-2 rounded-full font-semibold text-sm md:text-base"
           style={{
             background: "color-mix(in srgb, var(--foreground) 10%, transparent)",
             color: "var(--foreground)",
-            border:
-              "1px solid color-mix(in srgb, var(--foreground) 25%, transparent)",
+            border: "1px solid color-mix(in srgb, var(--foreground) 25%, transparent)"
           }}
         >
           {loggedIn ? t.nav_dashboard : t.nav_login}

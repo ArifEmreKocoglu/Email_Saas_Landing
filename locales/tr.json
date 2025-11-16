@@ -82,6 +82,28 @@
     "nav_cta": "Başla",
     "nav_login": "Giriş Yap",
     "nav_signup": "Kayıt Ol",
-    "nav_dashboard": "Panel"
+    "nav_dashboard": "Panel",
+
+
+    "flow_step1_title": "E-posta Gmail'e Düşer",
+    "flow_step1_desc": "Gelen kutunuza düşen her e-posta, Entrfy tarafından gerçek zamanlı olarak algılanır.",
+    
+    "flow_step2_title": "Veri Güvenle İşlenir",
+    "flow_step2_desc": "E-posta içerikleri izole, şifreli ve güvenli bir ortamda işlenir. Hiçbir veri saklanmaz.",
+    
+    "flow_step3_title": "AI Analiz Pipeline",
+    "flow_step3_desc": "Tier-0 → Tier-1 → Tier-2 AI pipeline üzerinden e-posta içeriği, tonu ve amacı analiz edilir.",
+    
+    "flow_step4_title": "Akıllı Etiketleme",
+    "flow_step4_desc": "Marketing, Finance, Personal, HR gibi kategoriler otomatik belirlenir ve renklendirilir.",
+    
+    "flow_step5_title": "Yanıt Bekleyenler Ayrılır",
+    "flow_step5_desc": "Eğer e-posta yanıt gerektiriyorsa otomatik olarak Awaiting Reply etiketi eklenir.",
+    
+    "flow_step6_title": "Otomasyonlar Çalışır",
+    "flow_step6_desc": "Kural motoru veya n8n workflow'larınız devreye girer. Yönlendirme, arşivleme, bildirim vb.",
+    
+    "flow_step7_title": "Tam Gizlilik",
+    "flow_step7_desc": "Entrfy, verilerinizi asla saklamaz. Tüm işlemler şifreli, izole ve tamamen size özeldir."
     
   }

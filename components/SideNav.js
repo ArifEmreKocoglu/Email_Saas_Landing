@@ -83,6 +83,7 @@ export default function SideNav() {
 
         {sections.map((s, i) => (
           <motion.button
+          data-close-flow="true"
             key={s.id}
             onClick={() => scrollTo(s.id)}
             initial={{ opacity: 0, y: 10 }}
@@ -98,6 +99,7 @@ export default function SideNav() {
 
         <div className="mt-6 flex flex-col gap-3">
           <button
+          data-close-flow="true"
             className="px-4 py-2 rounded-full text-sm border hover:opacity-80 transition-all"
             style={{
               background: "var(--background)",
@@ -110,14 +112,16 @@ export default function SideNav() {
           </button>
 
           <button
-            className="px-4 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-all"
-            style={{
-              background: "var(--foreground)",
-              color: "var(--background)",
-            }}
+              onClick={() => window.triggerFlow?.()}
+              className="mt-8 px-8 py-3 rounded-full font-semibold text-sm md:text-base"
+              style={{
+                background: "linear-gradient(135deg, #5f00ff, #9a34ff)",
+                color: "white"
+              }}
           >
-            {t.nav_signup}
+            See how it works
           </button>
+
         </div>
       </div>
 
@@ -132,6 +136,7 @@ export default function SideNav() {
         {sections.map((s) => (
           <motion.button
             key={s.id}
+            data-close-flow="true"
             onClick={() => scrollTo(s.id)}
             className="text-xs px-3 py-1 rounded-full transition-all"
             style={
@@ -149,6 +154,22 @@ export default function SideNav() {
             {t[s.key]}
           </motion.button>
         ))}
+
+
+        <button
+          onClick={() => window.triggerFlow?.()}
+          className="font-semibold text-xs"
+          style={{
+            background: "linear-gradient(135deg, #5f00ff, #9a34ff)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            color: "transparent",
+            display: "inline-block",
+          }}
+        >
+          works
+        </button>
       </div>
     </>
   );

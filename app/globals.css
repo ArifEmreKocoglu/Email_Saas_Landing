@@ -96,3 +96,12 @@ html .aurora-3 {
 button, a{
   cursor: pointer;
 }
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

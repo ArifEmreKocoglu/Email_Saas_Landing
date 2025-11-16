@@ -32,7 +32,7 @@ export default function Features() {
         transition={{ duration: 0.5 }}
         className="
           text-center 
-          text-3xl md:text-4xl lg:text-5xl 
+          text-3xl md:text-4xl lg:text-6xl 
           font-semibold 
           mb-10 md:mb-16
         "

@@ -82,6 +82,27 @@
     "nav_cta": "Start",
     "nav_login": "Login",
     "nav_signup": "Sign Up",
-    "nav_dashboard": "Dashboard"
+    "nav_dashboard": "Dashboard",
+
+    "flow_step1_title": "Email Arrives in Gmail",
+    "flow_step1_desc": "Every incoming email is detected instantly by Entrfy in real-time.",
+    
+    "flow_step2_title": "Processed Securely",
+    "flow_step2_desc": "Emails are processed in an encrypted, isolated environment. We store nothing.",
+    
+    "flow_step3_title": "AI Analysis Pipeline",
+    "flow_step3_desc": "Tier-0 → Tier-1 → Tier-2 pipeline analyzes content, tone and intent.",
+    
+    "flow_step4_title": "Smart Labeling",
+    "flow_step4_desc": "Marketing, Finance, Personal, HR and more categories are auto-detected and colored.",
+    
+    "flow_step5_title": "Awaiting Reply Detection",
+    "flow_step5_desc": "If the email needs a response, Entrfy automatically tags it as Awaiting Reply.",
+    
+    "flow_step6_title": "Automations Run",
+    "flow_step6_desc": "Your rules and n8n workflows execute: routing, archiving, forwarding, notifications.",
+    
+    "flow_step7_title": "Full Privacy",
+    "flow_step7_desc": "Entrfy never stores your emails. All processing is encrypted and isolated."
 }
 
