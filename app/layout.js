@@ -3,6 +3,7 @@ import { LocaleProvider } from "@/context/LocaleContext";
 import ThemeToggle from "@/components/ThemeToggle";
 import LenisWrapper from "@/components/LenisWrapper";
 import SideNav from "@/components/SideNav";
+import Header from "@/components/Header";
 import "./globals.css";
 
 export const metadata = {
@@ -15,14 +16,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <LocaleProvider>
-          <ThemeToggle />
-          <LanguageToggle />
-
+          <Header />
           <SideNav />
-
-          <LenisWrapper>
-            {children}
-          </LenisWrapper>
+          <LenisWrapper>{children}</LenisWrapper>
         </LocaleProvider>
       </body>
     </html>

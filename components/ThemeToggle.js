@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
-
     if (saved === "dark") {
       document.documentElement.classList.add("dark");
       setTheme("dark");
@@ -31,7 +30,11 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      className="fixed top-5 right-5 z-50 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white transition"
+      className="px-3 py-1 rounded-full text-sm transition-all"
+      style={{
+        background: "color-mix(in srgb, var(--foreground) 10%, transparent)",
+        color: "var(--foreground)",
+      }}
     >
       {theme === "light" ? "🌙" : "☀️"}
     </button>

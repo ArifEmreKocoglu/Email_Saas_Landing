@@ -41,22 +41,26 @@ export default function SideNav() {
     const el = document.getElementById(id);
     if (!el) return;
   
+    // get absolute position BEFORE centering logic
     const rect = el.getBoundingClientRect();
+    const elementY = rect.top + window.scrollY;
+  
     const sectionHeight = rect.height;
     const windowHeight = window.innerHeight;
   
-    const offset =
-      sectionHeight < windowHeight * 0.9
-        ? (windowHeight - sectionHeight) / 2     
-        : windowHeight * 0.15;                   
+    // always center (best UX)
+    const offset = (windowHeight - sectionHeight) / 2;
   
-    const targetY = el.offsetTop - offset;
+    // final Y target
+    const targetY = elementY - offset;
   
     window.scrollTo({
       top: targetY,
       behavior: "smooth",
     });
   };
+  
+  
   /* ------------------------------------------- */
   const activeStyle = {
     background: "var(--foreground)",

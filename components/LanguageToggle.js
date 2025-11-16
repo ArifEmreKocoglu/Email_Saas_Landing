@@ -8,14 +8,13 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={() => changeLang(locale === "en" ? "tr" : "en")}
-      className="fixed top-5 left-5 z-50 px-4 py-2 rounded-full backdrop-blur-md transition border"
+      className="px-3 py-1 rounded-full text-sm transition-all"
       style={{
-        background: "color-mix(in srgb, var(--background) 20%, transparent)",
+        background: "color-mix(in srgb, var(--foreground) 10%, transparent)",
         color: "var(--foreground)",
-        borderColor: "color-mix(in srgb, var(--foreground) 30%, transparent)"
       }}
     >
-      {locale.toUpperCase()}
+      {locale === "en" ? "TR" : "EN"}
     </button>
   );
 }

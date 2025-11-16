@@ -14,8 +14,8 @@ export default function Features() {
         w-full 
         px-4 md:px-6 
         relative
-        pt-28 md:pt-36
-        pb-32 md:pb-44
+        pt-24 md:pt-32
+        pb-24 md:pb-32
         min-h-[100vh]
         flex flex-col
       "
@@ -32,9 +32,9 @@ export default function Features() {
         transition={{ duration: 0.5 }}
         className="
           text-center 
-          text-3xl md:text-5xl lg:text-6xl 
+          text-3xl md:text-4xl lg:text-5xl 
           font-semibold 
-          mb-16 md:mb-20
+          mb-10 md:mb-16
         "
       >
         {t.features_title}
@@ -46,7 +46,7 @@ export default function Features() {
           grid
           grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
           gap-6 md:gap-8 lg:gap-10
-          max-w-7xl mx-auto
+          max-w-6xl mx-auto
           auto-rows-[1fr]
           w-full flex-1
         "
