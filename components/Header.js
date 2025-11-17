@@ -35,7 +35,7 @@ export default function Header() {
 
         <Link
         data-close-flow="true"
-          href={loggedIn ? "/app" : "/app/login"}
+          href={"https://panel.entrfy.com"}
           className="px-5 py-2 rounded-full font-semibold text-sm md:text-base"
           style={{
             background: "color-mix(in srgb, var(--foreground) 10%, transparent)",

@@ -97,8 +97,8 @@ export default function SideNav() {
           </motion.button>
         ))}
 
-        <div className="mt-6 flex flex-col gap-3">
-          <button
+        <div className="mt-1flex flex-col gap-3">
+          {/* <button
           data-close-flow="true"
             className="px-4 py-2 rounded-full text-sm border hover:opacity-80 transition-all"
             style={{
@@ -109,17 +109,16 @@ export default function SideNav() {
             }}
           >
             {t.nav_login}
-          </button>
-
+          </button> */}
           <button
               onClick={() => window.triggerFlow?.()}
-              className="mt-8 px-8 py-3 rounded-full font-semibold text-sm md:text-base"
+              className="mt-1 px-4 py-2 rounded-full text-sm md:text-sm"
               style={{
                 background: "linear-gradient(135deg, #5f00ff, #9a34ff)",
                 color: "white"
               }}
           >
-            See how it works
+            Works
           </button>
 
         </div>

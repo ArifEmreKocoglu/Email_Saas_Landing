@@ -8,6 +8,7 @@ export default function FlowSection({ onExit }) {
   const scrolling = useRef(false);
   const skipFirstWheel = useRef(true);
   const wrapperRef = useRef(null);
+
   const steps = [
     { icon: "📥", title: "E-posta Alınıyor", desc: "Gelen kutusu taranıyor." },
     { icon: "🧠", title: "AI Analiz", desc: "Tier-0 → Tier-1 → Tier-2." },
@@ -17,37 +18,23 @@ export default function FlowSection({ onExit }) {
     { icon: "🛡️", title: "Güvenlik", desc: "Tamamen izole & şifreli ortam." }
   ];
 
-  /* BODY SCROLL KİLİT */
+  /* ===== BODY SCROLL LOCK ===== */
   useEffect(() => {
     document.body.style.overflow = "hidden";
-
-    const t = setTimeout(() => {
-      skipFirstWheel.current = false;
-    }, 300);
-
+    const t = setTimeout(() => (skipFirstWheel.current = false), 300);
     return () => {
       clearTimeout(t);
       document.body.style.overflow = "auto";
     };
   }, []);
 
-
-  useEffect(() => {
-    const handleClick = (e) => {
-      const target = e.target.closest("[data-close-flow='true']");
-      if (target) onExit?.();
-    };
-  
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, [onExit]);
-
-  /* NAV & HEADER exit */
+  /* ===== HEADER + NAV EXIT ===== */
   useEffect(() => {
     window.closeFlow = () => onExit?.();
   }, [onExit]);
 
-  /* SCROLL → step navigation */
+
+  /* ===== DESKTOP SCROLL ===== */
   const handleWheel = (e) => {
     if (skipFirstWheel.current) return;
     if (scrolling.current) return;
@@ -55,15 +42,10 @@ export default function FlowSection({ onExit }) {
     scrolling.current = true;
 
     if (e.deltaY > 0) {
-      if (index < steps.length - 1) {
-        setIndex(index + 1);
-      } else {
-        setTimeout(() => onExit?.(), 200);
-      }
+      if (index < steps.length - 1) setIndex((p) => p + 1);
+      else setTimeout(() => onExit?.(), 200);
     } else {
-      if (index > 0) {
-        setIndex(index - 1);
-      }
+      if (index > 0) setIndex((p) => p - 1);
     }
 
     setTimeout(() => {
@@ -71,18 +53,77 @@ export default function FlowSection({ onExit }) {
     }, 450);
   };
 
+
+  /* ===== MOBILE TOUCH SWIPE ===== */
+  useEffect(() => {
+    let startY = 0;
+    let endY = 0;
+
+    const handleTouchStart = (e) => {
+      startY = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e) => {
+      endY = e.changedTouches[0].clientY;
+      const diff = startY - endY;
+
+      if (Math.abs(diff) < 40) return;
+      if (scrolling.current) return;
+
+      scrolling.current = true;
+
+      if (diff > 0) {
+        // swipe UP → next step
+        if (index < steps.length - 1) setIndex((p) => p + 1);
+        else setTimeout(() => onExit?.(), 200);
+      } else {
+        // swipe DOWN → previous step
+        if (index > 0) setIndex((p) => p - 1);
+      }
+
+      setTimeout(() => {
+        scrolling.current = false;
+      }, 450);
+    };
+
+    const el = wrapperRef.current;
+    if (!el) return;
+
+    el.addEventListener("touchstart", handleTouchStart, { passive: false });
+    el.addEventListener("touchend", handleTouchEnd, { passive: false });
+
+    return () => {
+      el.removeEventListener("touchstart", handleTouchStart);
+      el.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [index, onExit, steps.length]);
+
+
+  /* ===== CLICK → EXIT (header/nav buttons) ===== */
+  useEffect(() => {
+    const handleClick = (e) => {
+      const target = e.target.closest("[data-close-flow='true']");
+      if (target) onExit?.();
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, [onExit]);
+
+
   return (
     <section
-        ref={wrapperRef}
+      ref={wrapperRef}
       onWheel={handleWheel}
       className="
-        fixed inset-0 z-[49] 
+        fixed inset-0 z-[49]
         flex flex-col items-center justify-center
         bg-gradient-to-br from-[#0b0018] via-[#4c0088] to-black
-        text-white
-        overflow-hidden
+        text-white overflow-hidden
       "
+      style={{ touchAction: "none" }}  // 🌟 mobilde sayfanın kaymasını engeller
     >
+
       {/* PROGRESS BAR (YATAY) */}
       <div className="fixed lg:top-8 top-20 left-1/2 -translate-x-1/2 lg:w-[80%] w-[90%] max-w-4xl z-[160]">
         <div className="relative w-full h-2 bg-white/20 rounded-full overflow-hidden">
@@ -95,7 +136,6 @@ export default function FlowSection({ onExit }) {
           />
         </div>
 
-        {/* ADIM NUMARALARI */}
         <div className="flex justify-between mt-3">
           {steps.map((_, i) => {
             const active = i === index;
