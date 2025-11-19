@@ -20,7 +20,7 @@ export default function Features() {
         flex flex-col
       "
       style={{
-        background: "var(--background)",
+        background: "var(--background-bg)",
         color: "var(--foreground)",
       }}
     >

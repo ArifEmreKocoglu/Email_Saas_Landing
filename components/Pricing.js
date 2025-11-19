@@ -19,7 +19,7 @@ export default function Pricing() {
         flex flex-col
       "
       style={{
-        background: "var(--background)",
+        background: "var(--background-bg)",
         color: "var(--foreground)",
       }}
     >
@@ -77,7 +77,7 @@ export default function Pricing() {
                 min-h-[360px] md:min-h-[420px] lg:min-h-[460px]
               "
               style={{
-                background: "var(--background)",
+                background: "var(--background-bg)",
                 color: "var(--foreground)",
                 border:
                   "1px solid color-mix(in srgb, var(--foreground) 12%, transparent)",

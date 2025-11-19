@@ -20,7 +20,7 @@ export default function FinalCTA() {
         flex flex-col items-center justify-center
       "
       style={{
-        background: "var(--background)",
+        background: "var(--background-bg)",
         color: "var(--foreground)",
       }}
     >

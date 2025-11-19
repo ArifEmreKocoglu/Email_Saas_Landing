@@ -10,7 +10,7 @@ export default function Footer() {
       id="footer"
       className="w-full scroll-mt-[20vh] py-10 px-4 md:px-6 text-center text-sm transition-all"
       style={{
-        background: "var(--background)",
+        background: "var(--background-bg)",
         color: "color-mix(in srgb, var(--foreground) 55%, transparent)"
       }}
     >

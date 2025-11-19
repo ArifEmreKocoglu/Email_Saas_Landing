@@ -38,16 +38,16 @@ export default function Home() {
 
       {flowOpen && <FlowSection onExit={() => setFlowOpen(false)} />}
 
-      <div className="absolute inset-0 z-0">
-        <MailFlowBackground />
-      </div>
-
       <div className="relative z-10">
 
         <section
           id="hero"
-          className="h-screen flex flex-col items-center justify-center text-center px-4 md:px-6"
+          className="h-screen relative flex flex-col items-center justify-center text-center px-4 md:px-6"
         >
+
+      <div className="absolute inset-0 z-0">
+              <MailFlowBackground />
+            </div>
           <h1
             className="text-3xl md:text-6xl font-extrabold leading-tight text-transparent bg-clip-text"
             style={{
