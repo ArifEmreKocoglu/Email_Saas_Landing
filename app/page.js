@@ -10,23 +10,35 @@ import { useLocale } from "@/context/LocaleContext";
 import MailFlowBackground from "@/components/MailFlowBackground";
 import FlowSection from "@/components/FlowSection";
 
+import AISortingDemonstration from "@/components/AISortingDemonstration";
+
+
+import MailTaggingShowcase from "@/components/MailTaggingShowcase";
+
 export default function Home() {
   const { t } = useLocale();
   const [flowOpen, setFlowOpen] = useState(false);
   const [autoDone, setAutoDone] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (autoDone) return;
-      if (window.scrollY > 30 && !flowOpen) {
-        setFlowOpen(true);
-        setAutoDone(true);
-      }
-    };
+useEffect(() => {
+  const target = document.getElementById("features");
+  if (!target) return;
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [flowOpen, autoDone]);
+  const onScroll = () => {
+    if (autoDone) return;
+
+    const rect = target.getBoundingClientRect();
+
+
+    if (rect.bottom < window.innerHeight * 0.25) {
+      setFlowOpen(true);
+      setAutoDone(true);
+    }
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  return () => window.removeEventListener("scroll", onScroll);
+}, [autoDone]);
 
   useEffect(() => {
     window.triggerFlow = () => setFlowOpen(true);
@@ -48,14 +60,15 @@ export default function Home() {
       <div className="absolute inset-0 z-0">
               <MailFlowBackground />
             </div>
-          <h1
-            className="text-3xl md:text-6xl font-extrabold leading-tight text-transparent bg-clip-text"
-            style={{
-              backgroundImage: `linear-gradient(to bottom right, var(--foreground), var(--foreground))`,
-            }}
-          >
-            {t.hero_title}
-          </h1>
+            <h1
+              className="relative z-20 text-4xl md:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text"
+              style={{
+                backgroundImage: `linear-gradient(to bottom, #ffffff, #a5a5a5)`, // Daha net, metalik bir beyaz
+                textShadow: "0 20px 80px rgba(255,255,255,0.2)" // Arkadaki karmaşadan ayırmak için gölge
+              }}
+            >
+              {t.hero_title}
+            </h1>
 
           <p
             className="mt-4 md:mt-6 text-base md:text-xl max-w-xl"
@@ -90,9 +103,29 @@ export default function Home() {
         </div>
         </section>
 
+
+
+        <section 
+            id="ai-demo" 
+            className="w-full py-16 md:py-24"
+        >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+                <h2 className="text-3xl md:text-5xl font-extrabold text-white">
+                    Yapay Zeka Farkı
+                </h2>
+                <p className="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+                    Gelen kutunuzu anında okur, anlar ve otomatik olarak doğru yere yönlendirir.
+                </p>
+            </div>
+            <AISortingDemonstration />
+        </section>
+
+
+        <MailTaggingShowcase />
+
         <Features />
         <Pricing />
-        <FinalCTA />
+        {/* <FinalCTA /> */}
         <Footer />
       </div>
     </main>
