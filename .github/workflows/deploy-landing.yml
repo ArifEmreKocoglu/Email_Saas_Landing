@@ -1,0 +1,47 @@
+name: Auto Deploy Landing to AWS (Docker)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy Landing to AWS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Connect to EC2 and Deploy Landing
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "🚀 Deploying Landing Page..."
+
+            cd ~/email_saas_landing
+
+            echo "🔄 Pulling latest changes..."
+            git pull origin main
+
+            echo "🐳 Building Docker image for landing..."
+            docker build -t email_saas_landing-landing-frontend:latest .
+
+            echo "🛑 Stopping old container if exists..."
+            docker stop landing-frontend || true
+            docker rm landing-frontend || true
+
+            echo "🚀 Starting new landing container..."
+            docker run -d --name landing-frontend \
+              --network ops_net \
+              -p 3005:3000 \
+              email_saas_landing-landing-frontend:latest
+
+            echo "🔁 Reloading Caddy (zero downtime)..."
+            docker kill -s HUP caddy
+
+            echo "✅ Landing deployment completed successfully!"

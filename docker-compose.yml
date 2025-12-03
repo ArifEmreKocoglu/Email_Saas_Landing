@@ -1,0 +1,11 @@
+services:
+  landing-frontend:
+    build: .
+    container_name: landing-frontend
+    restart: unless-stopped
+    networks:
+      - ops_net
+
+networks:
+  ops_net:
+    external: true
