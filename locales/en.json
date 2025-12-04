@@ -103,6 +103,418 @@
     "flow_step6_desc": "Your rules and n8n workflows execute: routing, archiving, forwarding, notifications.",
     
     "flow_step7_title": "Full Privacy",
-    "flow_step7_desc": "Entrfy never stores your emails. All processing is encrypted and isolated."
+    "flow_step7_desc": "Entrfy never stores your emails. All processing is encrypted and isolated.",
+
+
+
+
+
+
+
+  "privacy_title": "How Entrfy Works With Your Gmail",
+
+  "privacy_what_title": "What Entrfy Does",
+  "privacy_what_desc": "Entrfy analyzes your incoming Gmail messages and automatically assigns smart categories such as Finance, Security, Marketing, HR and more. Entrfy never modifies email content; it only classifies new emails to keep your inbox organized.",
+
+  "privacy_permissions_title": "Why Entrfy Needs Gmail Permissions",
+  "privacy_permissions_desc": "Entrfy requires access to read your Gmail inbox so it can detect new emails, analyze them and apply labels back to your Gmail account. Entrfy never sends full email content to third-party services and does not store full message bodies.",
+
+  "privacy_ai_title": "What Data Is Shared With AI?",
+  "privacy_ai_list": [
+    "✓ Subject line only",
+    "✓ Short body snippet (never the full message)",
+    "✓ Sender domain & metadata",
+    "✗ No full email body is ever shared",
+    "✗ No attachments are transmitted",
+    "✗ Sensitive content never leaves Entrfy"
+  ],
+
+  "privacy_deletion_title": "When You Disconnect Your Gmail",
+  "privacy_deletion_desc": "Entrfy immediately stops all access to your Gmail account. Watch processes stop, no new emails are processed and your OAuth token becomes inactive. No further data is read from your Gmail.",
+
+
+
+
+
+
+
+    "privacy_title": "Privacy Policy — Entrfy AI Email Classifier",
+
+  "privacy_sections": [
+    {
+      "title": "1. Introduction",
+      "paragraphs": [
+        "Entrfy AI Email Classifier (“Entrfy”, “we”, “our”, or “the Service”) is an AI-powered email automation tool that categorizes Gmail messages using artificial intelligence.",
+        "This Privacy Policy explains how we collect, use, store, and protect your information when you use Entrfy and connect your Gmail account.",
+        "By accessing Entrfy or connecting your Gmail account, you consent to the data practices described in this Privacy Policy."
+      ]
+    },
+
+    {
+      "title": "2. Information We Collect",
+      "paragraphs": [
+        "Entrfy collects only the minimum data required to provide our classification service.",
+        "We collect the following:",
+        "• Account information: email address, login metadata, and subscription details.",
+        "• Gmail OAuth tokens (access_token, refresh_token, expiry_date).",
+        "• Gmail metadata such as subject line, sender email/domain, snippet, date, message ID, thread ID, and extracted URL domains.",
+        "Entrfy does NOT collect or store full email bodies or attachments under any circumstances."
+      ]
+    },
+
+    {
+      "title": "3. How Gmail Data Is Used",
+      "paragraphs": [
+        "Entrfy processes new incoming Gmail INBOX messages to detect email events and categorize them using AI.",
+        "Collected metadata is used exclusively to:",
+        "• Identify new messages through Gmail History API.",
+        "• Run AI-based classification.",
+        "• Apply or update labels in your Gmail account.",
+        "Entrfy does NOT:",
+        "• Sell Gmail data.",
+        "• Use emails for advertising.",
+        "• Train third-party AI models with your email content.",
+        "• Access or analyze emails outside your INBOX.",
+        "Entrfy fully complies with Google API Limited Use Restrictions."
+      ]
+    },
+
+    {
+      "title": "4. AI Processing",
+      "paragraphs": [
+        "Entrfy uses Fireworks.ai to classify email metadata. Only minimal information is transmitted for classification purposes:",
+        "• Subject line",
+        "• Short snippet (partial body sample, maximum a few lines)",
+        "• Sender domain",
+        "• Extracted link domains",
+        "• User label configuration",
+        "Entrfy NEVER sends:",
+        "• Full email bodies",
+        "• Attachments",
+        "• Images",
+        "• OAuth tokens",
+        "• Personal files or complete thread histories"
+      ]
+    },
+
+    {
+      "title": "5. Data Storage and Retention",
+      "paragraphs": [
+        "Entrfy stores only the minimum amount of data necessary to provide its service:",
+        "• Encrypted OAuth tokens",
+        "• Email metadata (subject, snippet hash, sender domain, and classification result)",
+        "• Classification templates for accuracy improvement",
+        "Entrfy does NOT store full email bodies, attachments, or HTML content.",
+        "Retention:",
+        "• OAuth tokens are deleted immediately once the user disconnects their Gmail account.",
+        "• Logs and temporary data are retained for 30–90 days before automatic deletion.",
+        "• User account data is retained until the account is deleted by the user."
+      ]
+    },
+
+    {
+      "title": "6. Disconnecting Gmail",
+      "paragraphs": [
+        "When a user disconnects Gmail from Entrfy:",
+        "• All OAuth tokens are permanently deleted.",
+        "• Gmail watch processes stop instantly.",
+        "• Entrfy ceases all data access from the Gmail account.",
+        "• No new emails are processed.",
+        "• Gmail-related metadata becomes inactive.",
+        "This action is irreversible for security reasons."
+      ]
+    },
+
+    {
+      "title": "7. Data Security",
+      "paragraphs": [
+        "Entrfy implements industry-standard security practices to protect your information:",
+        "• Encrypted MongoDB storage",
+        "• HTTPS enforced across all API endpoints",
+        "• AWS EC2 secure environment",
+        "• Encrypted OAuth token storage",
+        "• Access control and rate limiting",
+        "• No sensitive data written to logs",
+        "Entrfy continuously reviews its security posture."
+      ]
+    },
+
+    {
+      "title": "8. Data Sharing",
+      "paragraphs": [
+        "Entrfy only shares limited metadata with Fireworks.ai strictly for classification purposes.",
+        "No email body content or sensitive data is shared.",
+        "Entrfy does NOT sell, rent, or trade user information.",
+        "Entrfy does NOT share Gmail data with advertisers or unrelated third parties."
+      ]
+    },
+
+    {
+      "title": "9. User Rights (GDPR/KVKK)",
+      "paragraphs": [
+        "Users have the right to:",
+        "• Access stored personal data",
+        "• Request deletion of all stored metadata",
+        "• Disconnect Gmail at any time",
+        "• Request export of stored metadata",
+        "To exercise your rights, contact: support@entrfy.com"
+      ]
+    },
+
+    {
+      "title": "10. Children’s Privacy",
+      "paragraphs": [
+        "Entrfy is not intended for children under the age of 16.",
+        "We do not knowingly collect personal data from minors."
+      ]
+    },
+
+    {
+      "title": "11. Policy Updates",
+      "paragraphs": [
+        "Entrfy may update this Privacy Policy from time to time.",
+        "Users will be notified of material policy changes via email or in-app notifications."
+      ]
+    },
+
+    {
+      "title": "12. Contact Information",
+      "paragraphs": [
+        "Entrfy AI Email Classifier",
+        "support@entrfy.com",
+        "https://entrfy.com"
+      ]
+    }
+  ],
+
+
+
+
+
+
+
+  "terms_title": "Terms of Service — Entrfy AI Email Classifier",
+
+  "terms_sections": [
+    {
+      "title": "1. Introduction",
+      "paragraphs": [
+        "These Terms of Service (“Terms”) govern your use of Entrfy AI Email Classifier (“Entrfy”, “we”, “our”, or “the Service”).",
+        "By creating an account or using Entrfy, you agree to these Terms. If you do not agree, you must discontinue use of the Service."
+      ]
+    },
+
+    {
+      "title": "2. Eligibility",
+      "paragraphs": [
+        "You must be at least 16 years old to use Entrfy.",
+        "By using the Service, you represent that you meet this requirement."
+      ]
+    },
+
+    {
+      "title": "3. Description of the Service",
+      "paragraphs": [
+        "Entrfy AI Email Classifier automatically analyzes and categorizes Gmail inbox messages using artificial intelligence.",
+        "Entrfy does not store full email bodies or attachments and only processes metadata required for classification.",
+        "The Service may apply labels directly to your Gmail account based on classification results."
+      ]
+    },
+
+    {
+      "title": "4. Google OAuth and Gmail Access",
+      "paragraphs": [
+        "To provide its functionality, Entrfy requires access to your Gmail account via Google OAuth.",
+        "By connecting your Gmail account, you authorize Entrfy to:",
+        "• Read new Gmail messages in your INBOX",
+        "• Access metadata such as subject, snippet, sender, and headers",
+        "• Apply or modify labels within your Gmail account",
+        "Entrfy complies with Google API Limited Use policies and will never use your data for advertising or unauthorized purposes."
+      ]
+    },
+
+    {
+      "title": "5. User Responsibilities",
+      "paragraphs": [
+        "You agree to:",
+        "• Provide accurate account information",
+        "• Use Entrfy only for lawful purposes",
+        "• Not attempt to reverse engineer or disrupt the Service",
+        "• Not misuse Gmail permissions or violate Google policies",
+        "Entrfy may suspend accounts engaged in abuse, unauthorized activity, or policy violations."
+      ]
+    },
+
+    {
+      "title": "6. Payments and Subscriptions",
+      "paragraphs": [
+        "Entrfy may offer paid subscription plans.",
+        "By subscribing, you authorize Entrfy or its payment provider (e.g., Stripe) to charge your selected payment method.",
+        "Subscription billing is recurring unless cancelled.",
+        "You may cancel your subscription at any time; however, refunds are not guaranteed and are determined case-by-case."
+      ]
+    },
+
+    {
+      "title": "7. Data and Privacy",
+      "paragraphs": [
+        "Your use of Entrfy is also governed by our Privacy Policy, which describes how your data is collected and processed.",
+        "By using the Service, you agree to the terms outlined in our Privacy Policy."
+      ]
+    },
+
+    {
+      "title": "8. Service Availability",
+      "paragraphs": [
+        "Entrfy is provided on an AS-IS and AS-AVAILABLE basis.",
+        "We do not guarantee uninterrupted uptime or error-free operation.",
+        "We reserve the right to modify, suspend, or discontinue the Service at any time."
+      ]
+    },
+
+    {
+      "title": "9. Limitation of Liability",
+      "paragraphs": [
+        "Entrfy is not liable for:",
+        "• Loss of data resulting from Gmail API restrictions or errors",
+        "• Misclassifications produced by AI models",
+        "• Service interruptions, downtime, or delays",
+        "• Unauthorized access resulting from user actions",
+        "To the maximum extent permitted by law, Entrfy’s total liability is limited to the amount paid by the user in the preceding 12 months."
+      ]
+    },
+
+    {
+      "title": "10. Termination",
+      "paragraphs": [
+        "You may stop using Entrfy at any time.",
+        "Entrfy may suspend or terminate accounts that violate these Terms or harm system integrity.",
+        "Upon termination:",
+        "• Your OAuth tokens will be permanently deleted",
+        "• Gmail access will be revoked",
+        "• The account will no longer process email data"
+      ]
+    },
+
+    {
+      "title": "11. Modifications to the Terms",
+      "paragraphs": [
+        "Entrfy may update these Terms periodically.",
+        "Continued use of the Service constitutes acceptance of updated Terms."
+      ]
+    },
+
+    {
+      "title": "12. Governing Law",
+      "paragraphs": [
+        "These Terms are governed by applicable international and local laws.",
+        "Any legal disputes must be resolved in the jurisdiction where Entrfy operates."
+      ]
+    },
+
+    {
+      "title": "13. Contact Information",
+      "paragraphs": [
+        "Entrfy AI Email Classifier",
+        "support@entrfy.com",
+        "https://entrfy.com"
+      ]
+    }
+  ],
+
+
+
+
+
+  "google_limited_title": "Google API Limited Use Disclosure",
+
+  "google_limited_sections": [
+    {
+      "title": "1. Overview",
+      "paragraphs": [
+        "Entrfy AI Email Classifier uses Gmail API data strictly in accordance with Google API Services User Data Policy, including the Limited Use requirements.",
+        "This page explains how Entrfy accesses, uses, stores, and protects Gmail data."
+      ]
+    },
+
+    {
+      "title": "2. Gmail Data We Access",
+      "paragraphs": [
+        "Entrfy only requests the minimum Gmail permissions required to operate:",
+        "• Read new messages in your Gmail INBOX (metadata only)",
+        "• Apply or update labels using Gmail label scopes",
+        "Entrfy does NOT request permission to:",
+        "• Read or modify emails in other folders",
+        "• Access or download attachments",
+        "• Read full message bodies"
+      ]
+    },
+
+    {
+      "title": "3. How Gmail Data Is Used",
+      "paragraphs": [
+        "Entrfy uses Gmail metadata solely for the following purposes:",
+        "• Detecting new emails using Gmail History API",
+        "• Classifying emails using AI",
+        "• Applying the correct label back to your Gmail account",
+        "Entrfy does NOT:",
+        "• Sell Gmail data",
+        "• Share Gmail data with advertisers",
+        "• Use Gmail data to build advertising profiles",
+        "• Train external AI models using Gmail content"
+      ]
+    },
+
+    {
+      "title": "4. AI Processing Limitations",
+      "paragraphs": [
+        "The following information may be sent to an AI classification model:",
+        "• Subject line",
+        "• Short snippet (a few lines of the email body provided by Gmail)",
+        "• Sender domain",
+        "• URL domains extracted from the email",
+        "Entrfy NEVER sends:",
+        "• Full email bodies",
+        "• Attachments",
+        "• Images",
+        "• OAuth tokens",
+        "All AI processing complies with Limited Use restrictions."
+      ]
+    },
+
+    {
+      "title": "5. Data Storage and Security",
+      "paragraphs": [
+        "Entrfy stores only the minimum metadata needed to classify emails.",
+        "We do NOT store:",
+        "• Full message bodies",
+        "• Attachments",
+        "• HTML content",
+        "Gmail OAuth tokens are encrypted and automatically deleted when a user disconnects Gmail from Entrfy."
+      ]
+    },
+
+    {
+      "title": "6. No Human Access",
+      "paragraphs": [
+        "Entrfy does not allow human access to Gmail data except:",
+        "• If required by law",
+        "• If explicitly granted by the user in writing for support purposes",
+        "Otherwise, Gmail data remains fully automated and inaccessible to staff."
+      ]
+    },
+
+    {
+      "title": "7. Compliance Statement",
+      "paragraphs": [
+        "Entrfy fully complies with Google API Services User Data Policy.",
+        "We do not use or transfer Gmail data except to provide or improve user-facing features.",
+        "We do not transfer Gmail data to third parties except to provide the core classification service."
+      ]
+    }
+  ]
+
+
+    
 }
 

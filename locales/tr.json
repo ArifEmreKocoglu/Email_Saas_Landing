@@ -104,6 +104,420 @@
     "flow_step6_desc": "Kural motoru veya n8n workflow'larınız devreye girer. Yönlendirme, arşivleme, bildirim vb.",
     
     "flow_step7_title": "Tam Gizlilik",
-    "flow_step7_desc": "Entrfy, verilerinizi asla saklamaz. Tüm işlemler şifreli, izole ve tamamen size özeldir."
+    "flow_step7_desc": "Entrfy, verilerinizi asla saklamaz. Tüm işlemler şifreli, izole ve tamamen size özeldir.",
+
+
+
+
+
+
+
+  "privacy_title": "Entrfy Gmail Hesabınızla Nasıl Çalışır",
+
+  "privacy_what_title": "Entrfy Ne Yapar?",
+  "privacy_what_desc": "Entrfy gelen Gmail e-postalarınızı analiz eder ve Finans, Güvenlik, Pazarlama, İK gibi akıllı kategoriler uygular. Entrfy e-posta içeriğini değiştirmez; yalnızca yeni mesajları sınıflandırarak gelen kutunuzu düzenli tutar.",
+
+  "privacy_permissions_title": "Neden Gmail İzinlerine İhtiyaç Duyuyoruz?",
+  "privacy_permissions_desc": "Entrfy’nin Gmail gelen kutunuza erişmesi gerekir; böylece yeni e-postaları algılayabilir, analiz edebilir ve doğru etiketi hesabınıza geri ekleyebilir. Entrfy tam e-posta içeriğini hiçbir zaman üçüncü taraf servislerle paylaşmaz ve tam gövdeyi kaydetmez.",
+
+  "privacy_ai_title": "Yapay Zekâ ile Paylaşılan Veriler",
+  "privacy_ai_list": [
+    "✓ Sadece konu başlığı",
+    "✓ Kısa bir gövde özeti (asla tam mesaj değil)",
+    "✓ Gönderen alan adı ve metadata",
+    "✗ Tam e-posta gövdesi gönderilmez",
+    "✗ Ek dosyalar hiçbir zaman aktarılmaz",
+    "✗ Hassas içerik Entrfy dışına çıkmaz"
+  ],
+
+  "privacy_deletion_title": "Gmail Hesabını Kaldırdığınızda",
+  "privacy_deletion_desc": "Entrfy erişimi anında durdurur. Watch süreçleri kapanır, yeni e-posta işlenmez ve OAuth token pasif hale gelir. Gmail hesabınızdan artık hiçbir veri okunmaz.",
+
+
+
+
+
+
+
+
+  "privacy_title": "Gizlilik Politikası — Entrfy AI Email Classifier",
+
+  "privacy_sections": [
+    {
+      "title": "1. Giriş",
+      "paragraphs": [
+        "Entrfy AI Email Classifier (“Entrfy”, “biz”), Gmail mesajlarını yapay zeka ile otomatik olarak sınıflandıran bir e-posta otomasyon hizmetidir.",
+        "Bu gizlilik politikası, hizmeti kullanırken topladığımız, işlediğimiz ve koruduğumuz verileri açıklar.",
+        "Hizmeti kullanarak veya Gmail hesabınızı bağlayarak bu politikada açıklanan veri uygulamalarını kabul etmiş olursunuz."
+      ]
+    },
+
+    {
+      "title": "2. Toplanan Veriler",
+      "paragraphs": [
+        "Entrfy yalnızca hizmeti sunmak için gerekli minimum verileri toplar:",
+        "• Kullanıcı hesabı e-posta adresi ve kimlik doğrulama bilgileri",
+        "• Gmail OAuth tokenları (access_token, refresh_token, expiry_date)",
+        "• Konu, gönderen, kısa metin snippet’i, tarih, mesaj ID’si, thread ID’si ve URL domainleri gibi e-posta metadata bilgileri",
+        "Entrfy hiçbir koşulda tam e-posta gövdesi veya ek dosya içeriklerini toplamaz veya saklamaz."
+      ]
+    },
+
+    {
+      "title": "3. Gmail Verilerinin Kullanımı",
+      "paragraphs": [
+        "Entrfy, Gmail gelen kutunuzdaki yeni mesajları algılar, metadata üzerinden sınıflandırır ve Gmail hesabınıza etiket uygular.",
+        "Toplanan metadata yalnızca aşağıdaki işlemler için kullanılır:",
+        "• Yeni e-postaların tespiti",
+        "• Yapay zeka ile sınıflandırma",
+        "• Gmail üzerinde ilgili etiketi uygulama",
+        "Entrfy şunları YAPMAZ:",
+        "• Verilerinizi satmaz veya kiralamaz",
+        "• E-posta içeriklerinizi reklam amacıyla kullanmaz",
+        "• Tam mesaj içeriğini saklamaz",
+        "• Üçüncü taraf yapay zeka modellerini kullanıcı e-postalarıyla eğitmez"
+      ]
+    },
+
+    {
+      "title": "4. Yapay Zeka İşleme Süreci",
+      "paragraphs": [
+        "Entrfy, e-postaları sınıflandırmak için Fireworks.ai hizmetini kullanır. Yalnızca sınırlı metadata gönderilir:",
+        "• Konu başlığı",
+        "• Kısa metin özeti (snippet)",
+        "• Gönderen domaini",
+        "• Çıkarılmış link domainleri",
+        "• Kullanıcının etiket ayarları",
+        "Entrfy ASLA şunları göndermez:",
+        "• Tam e-posta gövdesi",
+        "• Ek dosyalar",
+        "• Resimler",
+        "• OAuth tokenları",
+        "• Hassas kişisel içerikler"
+      ]
+    },
+
+    {
+      "title": "5. Veri Saklama ve Silme",
+      "paragraphs": [
+        "Entrfy yalnızca gerekli minimum düzeyde veriyi saklar:",
+        "• Şifrelenmiş OAuth tokenları",
+        "• E-posta metadata bilgileri",
+        "• Sınıflandırma sonuçları ve şablonları",
+        "Saklanmayan veriler:",
+        "• Tam mesaj içerikleri",
+        "• Ekler ve görseller",
+        "• HTML gövdesi",
+        "Saklama süreleri:",
+        "• Kullanıcı Gmail bağlantısını kaldırırsa tüm tokenlar derhal silinir.",
+        "• Geçici işlem günlükleri 30–90 gün içerisinde otomatik temizlenir.",
+        "• Kullanıcı hesabı silinene kadar minimum metadata saklanır."
+      ]
+    },
+
+    {
+      "title": "6. Gmail Bağlantısının Kaldırılması",
+      "paragraphs": [
+        "Gmail bağlantısı kaldırıldığında:",
+        "• Tüm OAuth tokenları kalıcı olarak silinir.",
+        "• Gmail izleme süreçleri anında durur.",
+        "• Entrfy artık Gmail verilerine erişemez.",
+        "• Yeni e-posta işleme durur.",
+        "• Bu işlem güvenlik nedeniyle geri alınamaz."
+      ]
+    },
+
+    {
+      "title": "7. Veri Güvenliği",
+      "paragraphs": [
+        "Entrfy aşağıdaki güvenlik önlemlerini uygular:",
+        "• Şifrelenmiş MongoDB veritabanı",
+        "• Tüm isteklerde HTTPS zorunluluğu",
+        "• AWS EC2 güvenli ortamı",
+        "• Yetkilendirme ve erişim kontrolleri",
+        "• Token şifreleme",
+        "• Hassas veri içermeyen loglama",
+        "Entrfy güvenlik uygulamalarını düzenli olarak gözden geçirir."
+      ]
+    },
+
+    {
+      "title": "8. Veri Paylaşımı",
+      "paragraphs": [
+        "Entrfy yalnızca sınıflandırma amacıyla Fireworks.ai ile sınırlı metadata paylaşır.",
+        "Tam e-posta gövdesi veya hassas içerikler paylaşılmaz.",
+        "Kullanıcı verileri asla satılmaz, kiralanmaz veya reklam amaçlı kullanılmaz."
+      ]
+    },
+
+    {
+      "title": "9. Kullanıcı Hakları (KVKK / GDPR)",
+      "paragraphs": [
+        "Kullanıcılar şu haklara sahiptir:",
+        "• Saklanan verileri görüntüleme",
+        "• Verilerin silinmesini talep etme",
+        "• Gmail bağlantısını iptal etme",
+        "• Metadata ihracı talep etme",
+        "Talepler için: support@entrfy.com"
+      ]
+    },
+
+    {
+      "title": "10. Çocukların Gizliliği",
+      "paragraphs": [
+        "Entrfy 16 yaş altı kullanıcılar için tasarlanmamıştır.",
+        "Bu yaş grubuna ait veriler bilinçli olarak toplanmaz."
+      ]
+    },
+
+    {
+      "title": "11. Politika Değişiklikleri",
+      "paragraphs": [
+        "Entrfy bu gizlilik politikasını zaman zaman güncelleyebilir.",
+        "Önemli değişikliklerde kullanıcılara bildirim yapılır."
+      ]
+    },
+
+    {
+      "title": "12. İletişim",
+      "paragraphs": [
+        "Entrfy AI Email Classifier",
+        "support@entrfy.com",
+        "https://entrfy.com"
+      ]
+    }
+  ],
+
+
+
+
+
+
+
+
+  "terms_title": "Kullanım Şartları — Entrfy AI Email Classifier",
+
+  "terms_sections": [
+    {
+      "title": "1. Giriş",
+      "paragraphs": [
+        "Bu Kullanım Şartları (“Şartlar”), Entrfy AI Email Classifier (“Entrfy”, “biz”) hizmetinin kullanımını düzenler.",
+        "Hesap oluşturarak veya Entrfy’i kullanarak bu Şartları kabul etmiş sayılırsınız.",
+        "Kabul etmiyorsanız hizmeti kullanmayı derhal bırakmalısınız."
+      ]
+    },
+
+    {
+      "title": "2. Uygunluk",
+      "paragraphs": [
+        "Entrfy’i kullanmak için en az 16 yaşında olmanız gerekmektedir.",
+        "Hizmeti kullanarak bu koşulu karşıladığınızı beyan edersiniz."
+      ]
+    },
+
+    {
+      "title": "3. Hizmet Tanımı",
+      "paragraphs": [
+        "Entrfy AI Email Classifier, Gmail gelen kutusundaki mesajları yapay zeka kullanarak otomatik sınıflandıran bir hizmettir.",
+        "Entrfy tam e-posta içeriklerini saklamaz; yalnızca sınıflandırma için gerekli metadata’yı işler.",
+        "Gerekli durumlarda Gmail hesabınıza etiket ekleyebilir veya mevcut etiketleri güncelleyebilir."
+      ]
+    },
+
+    {
+      "title": "4. Google OAuth ve Gmail Erişimi",
+      "paragraphs": [
+        "Hizmeti sağlamak için Entrfy’nin Gmail hesabınıza erişmesi gerekir.",
+        "Gmail hesabınızı bağlayarak Entrfy’e şu izinleri vermiş olursunuz:",
+        "• Gelen kutunuzdaki yeni e-postaların okunması",
+        "• Konu, gönderen, kısa metin snippet’i ve header metadata erişimi",
+        "• Gmail hesabınıza etiket ekleme veya etiket güncelleme",
+        "Entrfy, Google API Limited Use şartlarına tam uyumludur."
+      ]
+    },
+
+    {
+      "title": "5. Kullanıcı Sorumlulukları",
+      "paragraphs": [
+        "Kullanıcı olarak şunları kabul edersiniz:",
+        "• Doğru bilgi sağlamak",
+        "• Hizmeti yalnızca yasal amaçlarla kullanmak",
+        "• Hizmeti kötüye kullanmamak veya tersine mühendislik denememek",
+        "• Google politikalarını ihlal etmemek",
+        "Entrfy, kötüye kullanım tespit edilen hesapları askıya alma hakkını saklı tutar."
+      ]
+    },
+
+    {
+      "title": "6. Ödemeler ve Abonelikler",
+      "paragraphs": [
+        "Entrfy ücretli abonelik planları sunabilir.",
+        "Bir plan satın aldığınızda ödeme sağlayıcılar (örneğin Stripe) üzerinden ücretlendirme yapılır.",
+        "Abonelikler iptal edilene kadar otomatik olarak yenilenir.",
+        "İptaller sonrası geri ödemeler garanti edilmez; durum bazında değerlendirilir."
+      ]
+    },
+
+    {
+      "title": "7. Veri ve Gizlilik",
+      "paragraphs": [
+        "Entrfy kullanımınız, Gizlilik Politikamız tarafından da düzenlenmektedir.",
+        "Hizmeti kullanarak Gizlilik Politikası koşullarını da kabul etmiş olursunuz."
+      ]
+    },
+
+    {
+      "title": "8. Hizmetin Kullanılabilirliği",
+      "paragraphs": [
+        "Entrfy, mevcut haliyle (“AS-IS”) ve erişilebilir olduğu sürece (“AS-AVAILABLE”) sunulmaktadır.",
+        "Kesintisiz çalışma veya hatasız performans garanti edilmez.",
+        "Hizmet istediğimiz zaman değiştirilebilir, askıya alınabilir veya sonlandırılabilir."
+      ]
+    },
+
+    {
+      "title": "9. Sorumluluk Sınırlaması",
+      "paragraphs": [
+        "Entrfy aşağıdaki durumlardan sorumlu değildir:",
+        "• Gmail API kısıtlamaları veya hatalarından kaynaklanan veri kaybı",
+        "• Yapay zeka modelinin yanlış sınıflandırmaları",
+        "• Hizmet kesintileri veya erişim sorunları",
+        "• Kullanıcı hatalarından doğan güvenlik ihlalleri",
+        "Kanunen izin verilen en geniş kapsamda, Entrfy’nin toplam sorumluluğu son 12 ayda ödenen ücretlerle sınırlıdır."
+      ]
+    },
+
+    {
+      "title": "10. Hizmetin Sonlandırılması",
+      "paragraphs": [
+        "Kullanıcı istediği zaman Entrfy kullanımını bırakabilir.",
+        "Entrfy, politikaları ihlal eden veya sistemi tehlikeye atan hesapları askıya alma veya sonlandırma hakkına sahiptir.",
+        "Hesap sonlandırıldığında:",
+        "• OAuth tokenları kalıcı olarak silinir",
+        "• Gmail erişimi tamamen kesilir",
+        "• E-posta işleme durur"
+      ]
+    },
+
+    {
+      "title": "11. Şartlarda Değişiklik",
+      "paragraphs": [
+        "Entrfy zaman zaman bu Şartları güncelleyebilir.",
+        "Hizmeti kullanmaya devam ettiğiniz sürece güncellenen Şartları kabul etmiş sayılırsınız."
+      ]
+    },
+
+    {
+      "title": "12. Uygulanacak Hukuk",
+      "paragraphs": [
+        "Bu Şartlar ilgili ulusal ve uluslararası hukuklara tabidir.",
+        "Hukuki uyuşmazlıklar Entrfy’nin faaliyet gösterdiği yargı yetkisinde çözümlenir."
+      ]
+    },
+
+    {
+      "title": "13. İletişim",
+      "paragraphs": [
+        "Entrfy AI Email Classifier",
+        "support@entrfy.com",
+        "https://entrfy.com"
+      ]
+    }
+  ],
+
+
+
+
+
+
+
+
+  "google_limited_title": "Google API Sınırlı Kullanım Bildirimi",
+
+  "google_limited_sections": [
+    {
+      "title": "1. Genel Bakış",
+      "paragraphs": [
+        "Entrfy AI Email Classifier, Gmail API verilerini Google API Services User Data Policy ve Limited Use gereksinimlerine tam uyumlu şekilde kullanır.",
+        "Bu sayfa, Gmail verilerine nasıl eriştiğimizi, nasıl kullandığımızı ve nasıl koruduğumuzu açıklar."
+      ]
+    },
+
+    {
+      "title": "2. Erişilen Gmail Verileri",
+      "paragraphs": [
+        "Entrfy yalnızca hizmet için gerekli minimum Gmail izinlerini ister:",
+        "• Gmail gelen kutusundaki yeni mesajların okunması (sadece metadata)",
+        "• Gmail etiketlerini uygulama veya güncelleme",
+        "Entrfy kesinlikle şunlara erişmez:",
+        "• Diğer klasörlerdeki e-postalar",
+        "• Ek dosyalar",
+        "• Tam mesaj gövdesi"
+      ]
+    },
+
+    {
+      "title": "3. Gmail Verilerinin Kullanımı",
+      "paragraphs": [
+        "Entrfy Gmail metadata bilgilerini yalnızca şu amaçlarla kullanır:",
+        "• Yeni e-postaları tespit etmek",
+        "• AI ile sınıflandırma yapmak",
+        "• Gmail hesabınıza doğru etiketi uygulamak",
+        "Entrfy şunları YAPMAZ:",
+        "• Gmail verilerini satmaz",
+        "• Gmail verilerini reklam amaçlı kullanmaz",
+        "• Gmail verilerini reklam profili oluşturmak için işlemez",
+        "• Gmail içeriklerini üçüncü taraf modelleri eğitmek için kullanmaz"
+      ]
+    },
+
+    {
+      "title": "4. Yapay Zeka İşleme Sınırları",
+      "paragraphs": [
+        "AI modeline yalnızca aşağıdaki sınırlı metadata gönderilir:",
+        "• Konu başlığı",
+        "• Kısa snippet (Gmail'in sağladığı birkaç satır)",
+        "• Gönderen domaini",
+        "• Çıkarılmış link domainleri",
+        "Entrfy ASLA şunları göndermez:",
+        "• Tam e-posta gövdeleri",
+        "• Ek dosyalar",
+        "• Resimler",
+        "• OAuth tokenları",
+        "Tüm AI işleme süreçleri Limited Use politikalarına uyumludur."
+      ]
+    },
+
+    {
+      "title": "5. Veri Saklama ve Güvenlik",
+      "paragraphs": [
+        "Entrfy yalnızca sınıflandırma için gerekli minimum metadata’yı saklar.",
+        "Aşağıdaki veriler saklanmaz:",
+        "• Tam mesaj içerikleri",
+        "• Ek dosyalar",
+        "• HTML içerikleri",
+        "Gmail OAuth tokenları şifrelenmiş şekilde saklanır ve kullanıcı Gmail bağlantısını kaldırdığında otomatik olarak silinir."
+      ]
+    },
+
+    {
+      "title": "6. İnsan Erişimi Yoktur",
+      "paragraphs": [
+        "Aşağıdaki durumlar hariç Gmail verilerine insan erişimi sağlanmaz:",
+        "• Kullanıcı yazılı olarak açık izin verirse",
+        "• Yasal zorunluluk bulunursa",
+        "Bunun dışında tüm veri işleme tamamen otomatik olarak gerçekleşir."
+      ]
+    },
+
+    {
+      "title": "7. Uyumluluk Beyanı",
+      "paragraphs": [
+        "Entrfy, Google API Services User Data Policy ile tamamen uyumludur.",
+        "Gmail verileri yalnızca kullanıcıya yönelik özellikleri sağlamak veya geliştirmek için kullanılır.",
+        "Gmail verileri, çekirdek sınıflandırma hizmeti dışında hiçbir üçüncü tarafla paylaşılmaz."
+      ]
+    }
+  ]
     
   }

@@ -11,6 +11,7 @@ import MailFlowBackground from "@/components/MailFlowBackground";
 import FlowSection from "@/components/FlowSection";
 
 import AISortingDemonstration from "@/components/AISortingDemonstration";
+import PrivacyExplanationSection from "@/components/PrivacyExplanationSection";
 
 
 import MailTaggingShowcase from "@/components/MailTaggingShowcase";
@@ -122,7 +123,7 @@ useEffect(() => {
 
 
         <MailTaggingShowcase />
-
+        <PrivacyExplanationSection />
         <Features />
         <Pricing />
         {/* <FinalCTA /> */}
